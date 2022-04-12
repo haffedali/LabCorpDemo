@@ -43,4 +43,13 @@ export const messagesApi = {
     const postString = buildApiPost("emails");
     return adalApiFetch(axios, postString, postConfig);
   },
+  ///////////////////////////////////////////////////////////////////////
+  //DUMMY DATA
+  getInboxEmailsDummy: () => {
+    
+  }
+
+
 };
+
+

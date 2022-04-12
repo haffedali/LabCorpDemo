@@ -56,6 +56,19 @@ export const getInboxEmails = (contactId) => {
   };
 };
 
+export const getInboxEmailsDemo = () => {
+  return (dispatch) => {
+    dispatch(_getEmailsStarted());
+    
+  }
+}
+
+
+
+
+
+
+
 export const getSentEmails = (email) => {
   return (dispatch) => {
     messagesApi
