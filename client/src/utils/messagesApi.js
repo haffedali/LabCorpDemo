@@ -1,7 +1,9 @@
 import axios from "axios";
+import { collection, getDocs } from "firebase/firestore";
 import { adalApiFetch } from "../adalConfig";
 import { getConfig, apiRoute, postConfigGenerator } from "./APIHeaders";
 import { buildApiPost, buildApiCall } from "./helperFunctions";
+import db from '../components/firebase.js'
 
 export const messagesApi = {
   getInboxEmails: (id) => {
@@ -45,8 +47,11 @@ export const messagesApi = {
   },
   ///////////////////////////////////////////////////////////////////////
   //DUMMY DATA
-  getInboxEmailsDummy: () => {
-    
+  getInboxEmailsDummy: async () => {
+    const querySnapshot = await getDocs(collection(db,"emails"));
+    querySnapshot.forEach((doc) => {
+      console.log(`${doc.id} => ${JSON.stringify(doc.data())}`)
+    });
   }
 
 

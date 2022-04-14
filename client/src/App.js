@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { SideBar } from './components'
 import { LogIn } from './pages';
+import { messagesApi } from './utils';
 
 /* NOTE: The 'username' prop in the Login component below is
    only for development, and should be deleted for production
@@ -10,7 +11,7 @@ import { LogIn } from './pages';
    
    It is necessary to auto login the user when the app is 
    started with 'npm run noauth'. */
-
+messagesApi.getInboxEmailsDummy()
 const App = (props) => 
   <div>
     <SideBar /> 
